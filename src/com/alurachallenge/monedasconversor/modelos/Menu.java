@@ -8,7 +8,11 @@ public class Menu {
     int opcion;
     String valorBase;
     String valorObjetivo;
+    float valor;
+    float valorFinal;
+    String datosApi;
     String mensaje = """
+            
             ***************************************************************
             Sea bienvenido/a al Conversor de Moneda =)
                          
@@ -16,8 +20,8 @@ public class Menu {
             2) Peso argentino ==> Dólar
             3) Dólar ==> Real brasileño
             4) Real brasileño ==> Dólar
-            5) Dólar ==> Peso colombiano
-            6) Peso colombiano ==> Dólar
+            5) Dólar ==> Peso chileno
+            6) Peso chileno ==> Dólar
             7) Salir
             Elija una opción valida:
             ****************************************************************
@@ -31,36 +35,103 @@ public class Menu {
     public void correPrograma(){
 //        muestraMenu();
 //        opcion = lectura.nextInt();
-
-        while (opcion != 4) {
+        while (opcion != 7) {
             muestraMenu();
             opcion = lectura.nextInt();
             switch (opcion) {
                 case 1:
                     System.out.println("Ingrese el valor que desea convertir");
-                    double valor = lectura.nextDouble();
+                    valor = lectura.nextFloat();
                     valorBase = "USD";
                     valorObjetivo = "ARS";
-                    var datosApi = consulta.obtieneData("https://v6.exchangerate-api.com/v6/ed12da4067667713f1084a72/pair/"
+                    datosApi = consulta.obtieneData("https://v6.exchangerate-api.com/v6/ed12da4067667713f1084a72/pair/"
                             + valorBase + "/" + valorObjetivo);
 
                     DatosValorMonedas data = gson.fromJson(datosApi, DatosValorMonedas.class);
 
-                    double valorFinal = valor * data.conversionRate();
+                    valorFinal = valor * data.conversionRate();
                     System.out.println("El valor " + valor + " [" + valorBase + "] " + "corresponde al valor final de ==>" +
                             " " + valorFinal + " [" + valorObjetivo + "]");
                     break;
 
                 case 2:
-                    System.out.println("otro resultadao");
+                    System.out.println("Ingrese el valor que desea convertir");
+                    valor = lectura.nextFloat();
+                    valorBase = "ARS";
+                    valorObjetivo = "USD";
+                    datosApi = consulta.obtieneData("https://v6.exchangerate-api.com/v6/ed12da4067667713f1084a72/pair/"
+                            + valorBase + "/" + valorObjetivo);
+
+                    data = gson.fromJson(datosApi, DatosValorMonedas.class);
+
+                    valorFinal = valor * data.conversionRate();
+                    System.out.println("El valor " + valor + " [" + valorBase + "] " + "corresponde al valor final de ==>" +
+                            " " + valorFinal + " [" + valorObjetivo + "]");
+                    break;
 
                 case 3:
-                    System.out.println("solos res");
-            }
-            System.out.println("Finalizando la aplicación");
-        }
-    }
+                    System.out.println("Ingrese el valor que desea convertir");
+                    valor = lectura.nextFloat();
+                    valorBase = "USD";
+                    valorObjetivo = "BRL";
+                    datosApi = consulta.obtieneData("https://v6.exchangerate-api.com/v6/ed12da4067667713f1084a72/pair/"
+                            + valorBase + "/" + valorObjetivo);
 
+                    data = gson.fromJson(datosApi, DatosValorMonedas.class);
+
+                    valorFinal = valor * data.conversionRate();
+                    System.out.println("El valor " + valor + " [" + valorBase + "] " + "corresponde al valor final de ==>" +
+                            " " + valorFinal + " [" + valorObjetivo + "]");
+                    break;
+
+                case 4:
+                    System.out.println("Ingrese el valor que desea convertir");
+                    valor = lectura.nextFloat();
+                    valorBase = "BRL";
+                    valorObjetivo = "USD";
+                    datosApi = consulta.obtieneData("https://v6.exchangerate-api.com/v6/ed12da4067667713f1084a72/pair/"
+                            + valorBase + "/" + valorObjetivo);
+
+                    data = gson.fromJson(datosApi, DatosValorMonedas.class);
+
+                    valorFinal = valor * data.conversionRate();
+                    System.out.println("El valor " + valor + " [" + valorBase + "] " + "corresponde al valor final de ==>" +
+                            " " + valorFinal + " [" + valorObjetivo + "]");
+                    break;
+
+                case 5:
+                    System.out.println("Ingrese el valor que desea convertir");
+                    valor = lectura.nextFloat();
+                    valorBase = "USD";
+                    valorObjetivo = "CLP";
+                    datosApi = consulta.obtieneData("https://v6.exchangerate-api.com/v6/ed12da4067667713f1084a72/pair/"
+                            + valorBase + "/" + valorObjetivo);
+
+                    data = gson.fromJson(datosApi, DatosValorMonedas.class);
+
+                    valorFinal = valor * data.conversionRate();
+                    System.out.println("El valor " + valor + " [" + valorBase + "] " + "corresponde al valor final de ==>" +
+                            " " + valorFinal + " [" + valorObjetivo + "]");
+                    break;
+
+                case 6:
+                    System.out.println("Ingrese el valor que desea convertir");
+                    valor = lectura.nextFloat();
+                    valorBase = "CLP";
+                    valorObjetivo = "USD";
+                    datosApi = consulta.obtieneData("https://v6.exchangerate-api.com/v6/ed12da4067667713f1084a72/pair/"
+                            + valorBase + "/" + valorObjetivo);
+
+                    data = gson.fromJson(datosApi, DatosValorMonedas.class);
+
+                    valorFinal = valor * data.conversionRate();
+                    System.out.println("El valor " + valor + " [" + valorBase + "] " + "corresponde al valor final de ==>" +
+                            " " + valorFinal + " [" + valorObjetivo + "]");
+                    break;
+            }
+        }
+        System.out.println("Finalizando la aplicación");
+    }
 
     public void muestraMenu(){
         System.out.println(this.mensaje);
