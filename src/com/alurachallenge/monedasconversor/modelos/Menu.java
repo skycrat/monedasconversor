@@ -33,8 +33,7 @@ public class Menu {
 
 
     public void correPrograma(){
-//        muestraMenu();
-//        opcion = lectura.nextInt();
+        
         while (opcion != 7) {
             muestraMenu();
             opcion = lectura.nextInt();
