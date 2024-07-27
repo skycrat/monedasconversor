@@ -7,7 +7,14 @@
    <img src="https://img.shields.io/badge/conversorJSON-GSON-green">
    </p>
 
-## Descripción
+## Uso
+<div align="center">
+   <p>Selecciona el valor de divisas que quieres convertir</p>
+   <img src="https://github.com/user-attachments/assets/6fe41b2d-d744-40ab-8bab-18dd06cfd917">
+   <p>Ingrese el valor que desea convertir</p>
+   <img src="https://github.com/user-attachments/assets/fafbaacb-6e96-48f0-a8c3-2ff83b7e9eb0">
+   <p>Ingrese 7 para salir de la aplicación</p>
+</div>
 
 
 ## :hammer:Funcionalidades del proyecto
