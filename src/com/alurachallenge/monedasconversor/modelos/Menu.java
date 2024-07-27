@@ -5,13 +5,13 @@ import com.google.gson.Gson;
 import java.util.Scanner;
 
 public class Menu {
-    int opcion;
-    String valorBase;
-    String valorObjetivo;
-    float valor;
-    float valorFinal;
-    String datosApi;
-    String mensaje = """
+    private int opcion;
+    private String valorBase;
+    private String valorObjetivo;
+    private float valor;
+    private float valorFinal;
+    private String datosApi;
+    private String mensaje = """
             
             ***************************************************************
             Sea bienvenido/a al Conversor de Moneda =)
