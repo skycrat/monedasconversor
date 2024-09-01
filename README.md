@@ -1,4 +1,8 @@
-# Challenge de Alura Conversor de Monedas
+<div align = "center">
+   <img src="https://github.com/user-attachments/assets/3e25d719-ccd4-450d-a2ef-d1cc19f57433" width = "400" height="400">
+   <h1>Challenge de Alura Conversor de Monedas</h1>
+</div>
+
 <p align="left">
    <img src="https://img.shields.io/badge/STATUS-CONCLUIDO-green">
    <img src="https://img.shields.io/badge/Java-v17-green">
